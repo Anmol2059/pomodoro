@@ -104,12 +104,12 @@ function changeBreakTime() {
 // Function to start the timer
 function startStopTimer() {
     if (isPaused) {
-        startStopButton.innerText = 'Stop';
+        startStopButton.innerText = 'Stop ⏹️';
         isPaused = false;
         startSound.play();
         startTimer();
     } else {
-        startStopButton.innerText = 'Start';
+        startStopButton.innerText = 'Start ▶️';
         isPaused = true;
         clearInterval(intervalId);
     }
@@ -120,7 +120,7 @@ function resetTimer() {
     clearInterval(intervalId);
     currentTime = workTime;
     isPaused = true;
-    startStopButton.innerText = 'Start';
+    startStopButton.innerText = 'Start ▶️';
     let m = Math.floor(currentTime / 60);
     let s = currentTime % 60;
     m = m < 10 ? '0' + m : m;

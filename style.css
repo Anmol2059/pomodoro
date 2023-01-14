@@ -1,189 +1,304 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
 
 body {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    font-family: 'Raleway', sans-serif;
-    background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+
+  /*   background: linear-gradient(to right, #f1f2f6, #ffffff); */
 }
 
 #quote {
-    width: 100%;
-    color: #36393F;
-    padding: 20px;
-    font-size: 1.5em;
-    text-align: center;
-    margin-top: 10px;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
-    font-weight: 600;
+  width: 100%;
+  color: #36393f;
+  padding: 20px;
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+  font-weight: 600;
 }
 
 #clock {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: white;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    font-size: 2em;
-    color: #36393F;
-    box-shadow: inset 0px 0px 10px #8f9499, 0px 0px 10px #8f9499;
-    margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  color: #36393f;
+  box-shadow: inset 0px 0px 10px #8f9499, 0px 0px 10px #8f9499;
+  margin-top: 20px;
 }
 
-#clock>div {
-    margin: 10px;
-    text-align: center;
+#clock > div {
+  margin: 10px;
+  text-align: center;
 }
 
 #minutes {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 #seconds {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 #timer-controls {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 #start-stop,
 #reset {
-    background-color: white;
-    color: #36393F;
-    padding: 5px 10px;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
-    cursor: pointer;
-    margin: 0 10px;
+  background-color: white;
+  color: #36393f;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+  cursor: pointer;
+  margin: 0 10px;
 }
 
 .fade-out {
-    animation: fade-out 1s ease-in-out;
-    animation-fill-mode: forwards;
+  animation: fade-out 1s ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade-out {
-    from {
-        opacity: 1;
-    }
+  from {
+    opacity: 1;
+  }
 
-    to {
-        opacity: 0;
-    }
+  to {
+    opacity: 0;
+  }
 }
 
 /* Progress bar */
 #progress-bar-container {
-    width: 100%;
-    height: 20px;
-    background-color: #ccc;
-    position: relative;
+  width: 100%;
+  height: 20px;
+  background-color: #ccc;
+  position: relative;
 }
 
 #progress-bar {
-    width: 0%;
-    height: 100%;
-    background-color: #8F9499;
-    position: absolute;
-    top: 0;
-    left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #8f9499;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #settings-container label {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
+/* Dark mode toggle switch */
 /* Dark mode toggle switch */
 #dark-mode-container {
     display: flex;
     align-items: center;
+    /* Add some padding and margin */
+    padding: 10px;
+    margin: 10px 0;
 }
 
-#dark-mode-container label {
-    margin-right: 10px;
+/* Create a container for the toggle switch */
+#dark-mode-toggle {
+    position: relative;
+    /* Add some styling to the toggle switch */
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #ccc;
+    /* Add a transition for the toggle switch */
+    transition: background-color 0.3s ease;
 }
+
+/* Create the toggle button */
+#dark-mode-toggle::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    
+    /* Add some styling to the toggle button */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    /* Add a transition for the toggle button */
+    transition: transform 0.3s ease;
+}
+
+/* Create the sun icon */
+#dark-mode-toggle .sun {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    /* Add some styling to the sun icon */
+    width: 25px;
+    height: 25px;
+    transform: translate(-50%, -50%);
+    /* Add a background image for the sun icon */
+    background-image: url("assets/sun.png");
+    background-size: cover;
+    /* Hide the sun icon by default */
+    opacity: 0;
+}
+
+  /* Create the moon icon */
+#dark-mode-toggle .moon {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    /* Add some styling to the moon icon */
+    width: 25px;
+    height: 25px;
+    transform: translate(-50%, -50%);
+    /* Add a background image for the moon icon */
+    background-image: url("assets/moon.png");
+    background-size: cover;
+    /* Show the moon icon by default */
+    opacity: 1;
+    /* Add a transition for the moon icon */
+    transition: opacity 0.3s;
+}
+
+/* Add a checked state for the toggle switch */
+input[type="checkbox"]:checked + #dark-mode-toggle {
+    background-color: #8f9499;
+}
+
+/* Add a checked state for the toggle button */
+input[type="checkbox"]:checked + #dark-mode-toggle::before {
+    transform: translateX(18px);
+}
+
+/* Show the sun icon when the toggle switch is checked */
+input[type="checkbox"]:checked + #dark-mode-toggle .sun {
+    opacity: 1;
+}
+
+/* Hide the moon icon when the toggle switch is checked */
+input[type="checkbox"]:checked + #dark-mode-toggle .moon {
+    opacity: 0;
+}
+
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #333;
-    color: #fff;
+  background-color: #333;
+  color: #fff;
 }
 
 .dark-mode #quote {
-    color: #fff;
-    box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+  color: #fff;
+  box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
 }
 
 .dark-mode #clock {
-    color: #fff;
-    box-shadow: inset 0px 0px 10px #8f9499, 0px 0px 10px #8f9499;
+  color: #fff;
+  box-shadow: inset 0px 0px 10px #8f9499, 0px 0px 10px #8f9499;
 }
 
 .dark-mode #minutes,
 .dark-mode #seconds {
-    color: #fff;
-    background-color: #333;
+  color: #fff;
+  background-color: #333;
 }
 
 /* Mobile */
 @media only screen and (max-width: 600px) {
-    body {
-        font-size: 0.9em;
-    }
+  body {
+    font-size: 0.9em;
+  }
 
-    #clock {
-        width: 150px;
-        height: 150px;
-        font-size: 1.5em;
-    }
+  #clock {
+    width: 150px;
+    height: 150px;
+    font-size: 1.5em;
+  }
 
-    #start-stop,
-    #reset {
-        padding: 5px;
-        font-size: 0.9em;
-    }
+  #start-stop,
+  #reset {
+    padding: 5px;
+    font-size: 0.9em;
+  }
 
-    #settings-container {
-        flex-wrap: wrap;
-    }
+  #settings-container {
+    flex-wrap: wrap;
+  }
 
-    #settings-container input,
-    #settings-container label {
-        width: 100%;
-    }
+  #settings-container input,
+  #settings-container label {
+    width: 100%;
+  }
 
-    #dark-mode-container {
-        justify-content: flex-start;
-    }
+  #dark-mode-container {
+    justify-content: flex-start;
+  }
 }
 
 /* iPad */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    body {
-        font-size: 1.2em;
-    }
+  body {
+    font-size: 1.2em;
+  }
 
-    #clock {
-        width: 200px;
-        height: 200px;
-        font-size: 2em;
-    }
+  #clock {
+    width: 200px;
+    height: 200px;
+    font-size: 2em;
+  }
 
-    #start-stop,
-    #reset {
-        padding: 8px;
-        font-size: 1.2em;
-    }
+  #start-stop,
+  #reset {
+    padding: 8px;
+    font-size: 1.2em;
+  }
+}
+#progress-bar {
+  animation: progress-bar-animation 5s linear;
+}
+
+@keyframes progress-bar-animation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+#work-time,
+#break-time {
+  width: 100px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+  margin-right: 10px;
+  text-align: center;
+  font-size: 1em;
+  color: #36393f;
+}
+
+#work-time:focus,
+#break-time:focus {
+  outline: none;
+  box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 10px #8f9499;
 }
