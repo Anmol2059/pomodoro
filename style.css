@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+}
+
+#quote {
+    width: 100%;
+    color: #36393F;
+    padding: 20px;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+    font-weight: 600;
+}
+
+#clock {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #36393F;
+    box-shadow: inset 0px 0px 10px #8f9499, 0px 0px 10px #8f9499;
+    margin-top: 20px;
+}
+
+#clock>div {
+    margin: 10px;
+    text-align: center;
+}
+
+#minutes {
+    font-size: 1.5em;
+}
+
+#seconds {
+    font-size: 1.5em;
+}
+
+#timer-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#start-stop,
+#reset {
+    background-color: white;
+    color: #36393F;
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.fade-out {
+    animation: fade-out 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Progress bar */
+#progress-bar-container {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    position: relative;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #8F9499;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#settings-container label {
+    margin-right: 10px;
+}
+
+/* Dark mode toggle switch */
+#dark-mode-container {
+    display: flex;
+    align-items: center;
+}
+
+#dark-mode-container label {
+    margin-right: 10px;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode #quote {
+    color: #fff;
+    box-shadow: inset 0px 0px 5px #8f9499, 0px 0px 5px #8f9499;
+}
+
+.dark-mode #clock {
+    color: #fff;
+    box-shadow: inset 0px 0px 10px #8f9499, 0px 0px 10px #8f9499;
+}
+
+.dark-mode #minutes,
+.dark-mode #seconds {
+    color: #fff;
+    background-color: #333;
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    #clock {
+        width: 150px;
+        height: 150px;
+        font-size: 1.5em;
+    }
+
+    #start-stop,
+    #reset {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+
+    #settings-container {
+        flex-wrap: wrap;
+    }
+
+    #settings-container input,
+    #settings-container label {
+        width: 100%;
+    }
+
+    #dark-mode-container {
+        justify-content: flex-start;
+    }
+}
+
+/* iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-size: 1.2em;
+    }
+
+    #clock {
+        width: 200px;
+        height: 200px;
+        font-size: 2em;
+    }
+
+    #start-stop,
+    #reset {
+        padding: 8px;
+        font-size: 1.2em;
+    }
+}
